@@ -1,0 +1,3 @@
+redapp_operations_homepage:
+    path:     /
+    defaults: { _controller: RedappOperationsBundle:Default:index }
