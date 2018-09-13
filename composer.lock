@@ -1,10 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2277e44fe7b30d2e4eb726dec46bea8b",
+    "hash": "6d49a26cb35bd61842dd09f5213582f0",
+    "content-hash": "f40aeeda30678985fdb7062823dd792d",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -60,7 +61,7 @@
                 "ssl",
                 "tls"
             ],
-            "time": "2018-08-08T08:57:40+00:00"
+            "time": "2018-08-08 08:57:40"
         },
         {
             "name": "doctrine/annotations",
@@ -128,7 +129,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2017-02-24T16:22:25+00:00"
+            "time": "2017-02-24 16:22:25"
         },
         {
             "name": "doctrine/cache",
@@ -198,7 +199,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2017-07-22T12:49:21+00:00"
+            "time": "2017-07-22 12:49:21"
         },
         {
             "name": "doctrine/collections",
@@ -265,7 +266,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2017-01-03T10:49:41+00:00"
+            "time": "2017-01-03 10:49:41"
         },
         {
             "name": "doctrine/common",
@@ -338,7 +339,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2017-07-22T08:35:12+00:00"
+            "time": "2017-07-22 08:35:12"
         },
         {
             "name": "doctrine/dbal",
@@ -409,7 +410,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-07-22T20:44:48+00:00"
+            "time": "2017-07-22 20:44:48"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -494,7 +495,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2018-04-19T14:07:39+00:00"
+            "time": "2018-04-19 14:07:39"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -582,7 +583,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2018-03-27T09:22:12+00:00"
+            "time": "2018-03-27 09:22:12"
         },
         {
             "name": "doctrine/inflector",
@@ -649,7 +650,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06T14:35:42+00:00"
+            "time": "2015-11-06 14:35:42"
         },
         {
             "name": "doctrine/instantiator",
@@ -703,7 +704,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14T21:17:01+00:00"
+            "time": "2015-06-14 21:17:01"
         },
         {
             "name": "doctrine/lexer",
@@ -757,7 +758,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09T13:34:57+00:00"
+            "time": "2014-09-09 13:34:57"
         },
         {
             "name": "doctrine/orm",
@@ -833,7 +834,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2017-12-17T02:57:51+00:00"
+            "time": "2017-12-17 02:57:51"
         },
         {
             "name": "fig/link-util",
@@ -887,7 +888,109 @@
                 "psr-13",
                 "rest"
             ],
-            "time": "2016-10-17T18:31:11+00:00"
+            "time": "2016-10-17 18:31:11"
+        },
+        {
+            "name": "friendsofsymfony/rest-bundle",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
+                "reference": "3725279a6554c1d894eee0b377f49d3f69e3c217"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/3725279a6554c1d894eee0b377f49d3f69e3c217",
+                "reference": "3725279a6554c1d894eee0b377f49d3f69e3c217",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/inflector": "^1.0",
+                "php": "^5.5.9|~7.0",
+                "psr/log": "^1.0",
+                "symfony/config": "^2.7|^3.0|^4.0",
+                "symfony/debug": "^2.7|^3.0|^4.0",
+                "symfony/dependency-injection": "^2.7|^3.0|^4.0",
+                "symfony/event-dispatcher": "^2.7|^3.0|^4.0",
+                "symfony/finder": "^2.7|^3.0|^4.0",
+                "symfony/framework-bundle": "^2.7|^3.0|^4.0",
+                "symfony/http-foundation": "^2.7|^3.0|^4.0",
+                "symfony/http-kernel": "^2.7|^3.0|^4.0",
+                "symfony/routing": "^2.7|^3.0|^4.0",
+                "symfony/security-core": "^2.7|^3.0|^4.0",
+                "symfony/templating": "^2.7|^3.0|^4.0",
+                "willdurand/jsonp-callback-validator": "^1.0",
+                "willdurand/negotiation": "^2.0"
+            },
+            "conflict": {
+                "jms/serializer": "1.3.0",
+                "jms/serializer-bundle": "<1.2.0",
+                "sensio/framework-extra-bundle": "<3.0.13"
+            },
+            "require-dev": {
+                "jms/serializer-bundle": "^1.2|^2.0",
+                "phpoption/phpoption": "^1.1",
+                "psr/http-message": "^1.0",
+                "sensio/framework-extra-bundle": "^3.0.13|^4.0|^5.0",
+                "symfony/asset": "^2.7|^3.0|^4.0",
+                "symfony/browser-kit": "^2.7|^3.0|^4.0",
+                "symfony/css-selector": "^2.7|^3.0|^4.0",
+                "symfony/dependency-injection": "^2.7.20|^3.0|^4.0",
+                "symfony/expression-language": "~2.7|^3.0|^4.0",
+                "symfony/form": "^2.7|^3.0|^4.0",
+                "symfony/phpunit-bridge": "^4.0",
+                "symfony/security-bundle": "^2.7|^3.0|^4.0",
+                "symfony/serializer": "^2.7.11|^3.0.4|^4.0",
+                "symfony/twig-bundle": "^2.7|^3.0|^4.0",
+                "symfony/validator": "^2.7|^3.0|^4.0",
+                "symfony/web-profiler-bundle": "^2.7|^3.0|^4.0",
+                "symfony/yaml": "^2.7|^3.0|^4.0"
+            },
+            "suggest": {
+                "jms/serializer-bundle": "Add support for advanced serialization capabilities, recommended, requires ^1.0",
+                "sensio/framework-extra-bundle": "Add support for the request body converter and the view response listener, requires ^3.0",
+                "symfony/expression-language": "Add support for using the expression language in the routing, requires ^2.7|^3.0",
+                "symfony/serializer": "Add support for basic serialization capabilities and xml decoding, requires ^2.7|^3.0",
+                "symfony/validator": "Add support for validation capabilities in the ParamFetcher, requires ^2.7|^3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FOS\\RestBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lukas Kahwe Smith",
+                    "email": "smith@pooteeweet.org"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSRestBundle/contributors"
+                },
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com"
+                }
+            ],
+            "description": "This Bundle provides various tools to rapidly develop RESTful API's with Symfony",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "rest"
+            ],
+            "time": "2018-08-21 16:54:14"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -938,7 +1041,7 @@
             "keywords": [
                 "parameters management"
             ],
-            "time": "2018-02-13T18:05:56+00:00"
+            "time": "2018-02-13 18:05:56"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -988,7 +1091,7 @@
                 "highlight",
                 "sql"
             ],
-            "time": "2014-01-12T16:20:24+00:00"
+            "time": "2014-01-12 16:20:24"
         },
         {
             "name": "monolog/monolog",
@@ -1066,7 +1169,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-06-19T01:22:40+00:00"
+            "time": "2017-06-19 01:22:40"
         },
         {
             "name": "paragonie/random_compat",
@@ -1115,7 +1218,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-07-04T16:31:37+00:00"
+            "time": "2018-07-04 16:31:37"
         },
         {
             "name": "psr/cache",
@@ -1161,7 +1264,7 @@
                 "psr",
                 "psr-6"
             ],
-            "time": "2016-08-06T20:24:11+00:00"
+            "time": "2016-08-06 20:24:11"
         },
         {
             "name": "psr/container",
@@ -1210,7 +1313,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14T16:28:37+00:00"
+            "time": "2017-02-14 16:28:37"
         },
         {
             "name": "psr/link",
@@ -1259,7 +1362,7 @@
                 "psr-13",
                 "rest"
             ],
-            "time": "2016-10-28T16:06:13+00:00"
+            "time": "2016-10-28 16:06:13"
         },
         {
             "name": "psr/log",
@@ -1306,7 +1409,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "psr/simple-cache",
@@ -1354,7 +1457,7 @@
                 "psr-16",
                 "simple-cache"
             ],
-            "time": "2017-10-23T01:57:42+00:00"
+            "time": "2017-10-23 01:57:42"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -1406,7 +1509,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2018-06-07T06:22:12+00:00"
+            "time": "2018-06-07 06:22:12"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -1477,7 +1580,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2018-05-12T09:37:42+00:00"
+            "time": "2018-05-12 09:37:42"
         },
         {
             "name": "sensiolabs/security-checker",
@@ -1522,7 +1625,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2018-02-28T22:10:01+00:00"
+            "time": "2018-02-28 22:10:01"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1576,7 +1679,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2018-07-31T09:26:32+00:00"
+            "time": "2018-07-31 09:26:32"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1639,7 +1742,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2018-06-04T05:55:43+00:00"
+            "time": "2018-06-04 05:55:43"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -1695,7 +1798,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2018-08-06 14:22:27"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1753,7 +1856,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2018-08-06 14:22:27"
         },
         {
             "name": "symfony/polyfill-intl-icu",
@@ -1811,7 +1914,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2018-08-06 14:22:27"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1870,7 +1973,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2018-08-06 14:22:27"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -1926,7 +2029,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2018-08-06 14:22:27"
         },
         {
             "name": "symfony/polyfill-php70",
@@ -1985,7 +2088,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2018-08-06 14:22:27"
         },
         {
             "name": "symfony/polyfill-util",
@@ -2037,7 +2140,7 @@
                 "polyfill",
                 "shim"
             ],
-            "time": "2018-08-06T14:22:27+00:00"
+            "time": "2018-08-06 14:22:27"
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -2096,7 +2199,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2017-10-19T01:06:41+00:00"
+            "time": "2017-10-19 01:06:41"
         },
         {
             "name": "symfony/symfony",
@@ -2251,7 +2354,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2018-08-28T06:06:28+00:00"
+            "time": "2018-08-28 06:06:28"
         },
         {
             "name": "twig/twig",
@@ -2317,7 +2420,99 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2018-07-13T07:12:17+00:00"
+            "time": "2018-07-13 07:12:17"
+        },
+        {
+            "name": "willdurand/jsonp-callback-validator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/JsonpCallbackValidator.git",
+                "reference": "1a7d388bb521959e612ef50c5c7b1691b097e909"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/JsonpCallbackValidator/zipball/1a7d388bb521959e612ef50c5c7b1691b097e909",
+                "reference": "1a7d388bb521959e612ef50c5c7b1691b097e909",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JsonpCallbackValidator": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                }
+            ],
+            "description": "JSONP callback validator.",
+            "time": "2014-01-20 22:35:06"
+        },
+        {
+            "name": "willdurand/negotiation",
+            "version": "v2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/Negotiation.git",
+                "reference": "03436ededa67c6e83b9b12defac15384cb399dc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/03436ededa67c6e83b9b12defac15384cb399dc9",
+                "reference": "03436ededa67c6e83b9b12defac15384cb399dc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Negotiation\\": "src/Negotiation"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "will+git@drnd.me"
+                }
+            ],
+            "description": "Content Negotiation tools for PHP provided as a standalone library.",
+            "homepage": "http://williamdurand.fr/Negotiation/",
+            "keywords": [
+                "accept",
+                "content",
+                "format",
+                "header",
+                "negotiation"
+            ],
+            "time": "2017-05-14 17:21:12"
         }
     ],
     "packages-dev": [
@@ -2373,7 +2568,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2017-12-07T15:36:41+00:00"
+            "time": "2017-12-07 15:36:41"
         },
         {
             "name": "symfony/phpunit-bridge",
@@ -2439,7 +2634,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2018-08-27T15:17:06+00:00"
+            "time": "2018-08-27 15:17:06"
         }
     ],
     "aliases": [],

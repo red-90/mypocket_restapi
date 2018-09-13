@@ -8,60 +8,41 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use FOS\RestBundle\Controller\Annotations as Rest; // alias pour toutes les annotations
 use AppBundle\Entity\Operation;
 
 class OperationController extends Controller
 {
-    /**
-     * @Route("/operations", name="operation_list")
-     * @Method({"GET"})
+
+     /**
+     * @Rest\View()
+     * @Rest\Get("/operations")
      */
     public function getOperationsAction(Request $request)
     {
         $operations = $this->get('doctrine.orm.entity_manager')
                 ->getRepository('AppBundle:Operation')
                 ->findAll();
-        /* @var $operations Operations[] */
 
-        $formatted = [];
-        foreach ($operations as $operation) {
-            $formatted[] = [
-               'id' => $operation->getId(),
-               'name' => $operation->getName(),
-               'type' => $operation->getType(),
-               'price' => $operation->getPrice(),
-               'category' => $operation->getCategory(),
-               'description' => $operation->getDescription(),
-            ];
-        }
-
-        return new JsonResponse($formatted);
+        return $operations;
     }
 
     /**
-     * @Route("/operations/{operation_id}", requirements={"operation_id" = "\d+"}, name="operation_one")
-     * @Method({"GET"})
+     * @Rest\View()
+     * @Rest\Get("/operations/{id}")
      */
     public function getOperationAction(Request $request)
     {
         $operation = $this->get('doctrine.orm.entity_manager')
                 ->getRepository('AppBundle:Operation')
-                ->find($request->get('operation_id'));
+                ->find($request->get('id'));
         /* @var $operation Operation */
 
         if (empty($operation)) {
             return new JsonResponse(['message' => 'Place not found'], Response::HTTP_NOT_FOUND);
         }
 
-        $formatted = [
-           'id' => $operation->getId(),
-           'name' => $operation->getName(),
-           'type' => $operation->getType(),
-           'price' => $operation->getPrice(),
-           'category' => $operation->getCategory(),
-           'description' => $operation->getDescription(),
-        ];
+        return $operation;
 
-        return new JsonResponse($formatted);
     }
 }

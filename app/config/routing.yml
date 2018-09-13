@@ -3,5 +3,13 @@ redapp_operations:
     prefix:   /
 
 app:
-    resource: '@AppBundle/Controller/'
+    resource: '@AppBundle/Controller/DefaultController.php'
     type: annotation
+
+operations:
+    type:     rest
+    resource: AppBundle\Controller\OperationController
+
+users:
+    type:     rest
+    resource: AppBundle\Controller\UserController
