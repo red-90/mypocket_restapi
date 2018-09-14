@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use FOS\RestBundle\Controller\Annotations as Rest; // alias pour toutes les annotations
+use AppBundle\Form\Type\OperationType;
 use AppBundle\Entity\Operation;
 
 class OperationController extends Controller
@@ -44,5 +45,26 @@ class OperationController extends Controller
 
         return $operation;
 
+    }
+
+    /**
+     * @Rest\View(statusCode=Response::HTTP_CREATED)
+     * @Rest\Post("/operations")
+     */
+    public function postOperationsAction(Request $request)
+    {
+        $operation = new Operation();
+
+        $form = $this->createForm(OperationType::class, $operation);
+
+        $form->submit($request->request->all()); // Validation des données
+        if ($form->isValid()) {
+          $em = $this->get('doctrine.orm.entity_manager');
+          $em->persist($operation);
+          $em->flush();
+          return $operation;
+        }else {
+            return $form;
+        }
     }
 }
