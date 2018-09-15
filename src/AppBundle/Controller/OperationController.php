@@ -37,14 +37,12 @@ class OperationController extends Controller
         $operation = $this->get('doctrine.orm.entity_manager')
                 ->getRepository('AppBundle:Operation')
                 ->find($request->get('id'));
-        /* @var $operation Operation */
 
         if (empty($operation)) {
-            return new JsonResponse(['message' => 'Place not found'], Response::HTTP_NOT_FOUND);
+            return \FOS\RestBundle\View\View::create(['message' => 'Operation not found'], Response::HTTP_NOT_FOUND);
         }
 
         return $operation;
-
     }
 
     /**
@@ -82,6 +80,50 @@ class OperationController extends Controller
         if ($operation) {
             $em->remove($operation);
             $em->flush();
+        }
+    }
+
+       /**
+     * @Rest\View()
+     * @Rest\Put("/operations/{id}")
+     */
+    public function updateOperationAction(Request $request)
+    {
+        return $this->updateOperation($request, true);
+    }
+
+    /**
+     * @Rest\View()
+     * @Rest\Patch("/operations/{id}")
+     */
+    public function patchOperationAction(Request $request)
+    {
+        return $this->updateOperation($request, false);
+    }
+
+    private function updateOperation(Request $request, $clearMissing)
+    {
+        $operation = $this->get('doctrine.orm.entity_manager')
+                ->getRepository('AppBundle:Operation')
+                ->find($request->get('id')); 
+
+        if (empty($operation)) {
+            return \FOS\RestBundle\View\View::create(['message' => 'Operation not found'], Response::HTTP_NOT_FOUND);
+        }
+
+        $form = $this->createForm(OperationType::class, $operation);
+
+        // Le paramètre false dit à Symfony de garder les valeurs dans notre
+        // entité si l'utilisateur n'en fournit pas une dans sa requête
+        $form->submit($request->request->all(), $clearMissing);
+
+        if ($form->isValid()) {
+            $em = $this->get('doctrine.orm.entity_manager');
+            $em->persist($operation);
+            $em->flush();
+            return $operation;
+        } else {
+            return $form;
         }
     }
 }
