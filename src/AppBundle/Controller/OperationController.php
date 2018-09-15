@@ -67,4 +67,21 @@ class OperationController extends Controller
             return $form;
         }
     }
+
+    /**
+     * @Rest\View(statusCode=Response::HTTP_NO_CONTENT)
+     * @Rest\Delete("/operations/{id}")
+     */
+    public function removeOperationAction(Request $request)
+    {
+        $em = $this->get('doctrine.orm.entity_manager');
+        $operation = $em->getRepository('AppBundle:Operation')
+                    ->find($request->get('id'));
+        /* @var $place Place */
+
+        if ($operation) {
+            $em->remove($operation);
+            $em->flush();
+        }
+    }
 }
