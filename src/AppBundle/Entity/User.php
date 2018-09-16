@@ -26,6 +26,16 @@ class User
      */
     protected $email;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Operation", mappedBy="user")
+     */
+    protected $operations;
+
+    public function __construct()
+    {
+        $this->operations = new ArrayCollection();
+    }
+
     public function getId()
     {
         return $this->id;

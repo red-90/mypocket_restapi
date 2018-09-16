@@ -17,3 +17,12 @@ AppBundle\Entity\User:
         email:
             - NotBlank: ~
             - Email: ~
+
+AppBundle\Entity\Category:
+    properties:
+        name:
+            - NotBlank: ~
+            - Type: string
+        parent:
+            - NotBlank: ~
+            - Type: integer

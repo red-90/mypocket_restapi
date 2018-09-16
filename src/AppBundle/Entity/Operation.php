@@ -28,11 +28,6 @@ class Operation
     private $type;
 
     /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private $category;
-
-    /**
      * @ORM\Column(type="decimal", scale=2)
      */
     private $price;
@@ -41,6 +36,19 @@ class Operation
      * @ORM\Column(type="text")
      */
     private $description;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="operations")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     */
+    private $category;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="operations")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+
 
     public function getId()
     {
@@ -72,6 +80,11 @@ class Operation
         return $this->description;
     }
 
+    public function getUser()
+    {
+        return $this->user;
+    }
+
     public function setId($id)
     {
         $this->id = $id;
@@ -99,6 +112,12 @@ class Operation
     public function setPrice($price)
     {
         $this->price = $price;
+        return $this;
+    }
+
+    public function setUser($user)
+    {
+        $this->user = $user;
         return $this;
     }
 
