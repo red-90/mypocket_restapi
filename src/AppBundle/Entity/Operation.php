@@ -38,6 +38,16 @@ class Operation
     private $description;
 
     /**
+     * @ORM\Column(name="opdate", type="datetime", options={"default": 0})
+     */
+    private $operation_date;
+
+    /**
+     * @ORM\Column(name="created", type="datetime", options={"default": 0})
+     */
+    private $created;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="operations")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
@@ -80,6 +90,16 @@ class Operation
         return $this->description;
     }
 
+    public function getOperationDate()
+    {
+        return $this->operation_date;
+    }
+
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
     public function getUser()
     {
         return $this->user;
@@ -112,6 +132,18 @@ class Operation
     public function setPrice($price)
     {
         $this->price = $price;
+        return $this;
+    }
+
+    public function setOperationDate($operation_date)
+    {   
+        $this->operation_date = $operation_date;
+        return $this;
+    }
+
+    public function setCreated($created)
+    {   
+        $this->created = $created;
         return $this;
     }
 
