@@ -2,6 +2,7 @@
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,8 +16,14 @@ class OperationType extends AbstractType
         $builder->add('price');
         $builder->add('description');
         $builder->add('user');
-        $builder->add('operation_date');
-        $builder->add('created');
+        $builder->add('operation_date', DateTimeType::class, [
+                      'widget' => 'single_text',
+                      'format' => 'yyyy-MM-dd HH:mm:ss',
+                    ]);
+        $builder->add('created', DateTimeType::class, [
+          'widget' => 'single_text',
+          'format' => 'yyyy-MM-dd HH:mm:ss',
+        ]);
         
     }
 
