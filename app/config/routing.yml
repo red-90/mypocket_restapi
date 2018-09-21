@@ -17,3 +17,7 @@ users:
 categories:
     type:     rest
     resource: AppBundle\Controller\CategoryController
+
+auth-tokens:
+    type:     rest
+    resource: AppBundle\Controller\AuthTokenController

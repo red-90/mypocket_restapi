@@ -12,6 +12,7 @@ class UserType extends AbstractType
     {
         $builder->add('fullname');
         $builder->add('email', EmailType::class);
+        $builder->add('plainPassword');
     }
 
     public function configureOptions(OptionsResolver $resolver)

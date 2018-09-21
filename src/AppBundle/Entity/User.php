@@ -3,12 +3,13 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
 * @ORM\Entity()
 * @ORM\Table(name="users", uniqueConstraints={@ORM\UniqueConstraint(name="users_email_unique",columns={"email"})})
 */
-class User
+class User implements UserInterface
 {
    /**
      * @ORM\Id
@@ -31,6 +32,13 @@ class User
      * @ORM\OneToMany(targetEntity="Operation", mappedBy="user")
      */
     protected $operations;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $password;
+
+    protected $plainPassword;
 
     public function __construct()
     {
@@ -65,5 +73,44 @@ class User
     public function setEmail($email)
     {
         $this->email = $email;
+    }
+
+    public function getPlainPassword()
+    {
+      return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+      $this->plainPassword = $password;
+    }
+
+    public function getPassword()
+    {
+      return $this->password;
+    }
+
+    public function setPassword($password)
+    {
+      $this->password = $password;
+    }
+    public function getRoles()
+    {
+      return [];
+    }
+
+    public function getSalt()
+    {
+      return null;
+    }
+    public function getUsername()
+    {
+      return $this->email;
+    }
+
+    public function eraseCredentials()
+    {
+      // Suppression des données sensibles
+      $this->plainPassword = null;
     }
 }

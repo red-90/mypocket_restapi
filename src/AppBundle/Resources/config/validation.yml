@@ -17,6 +17,12 @@ AppBundle\Entity\User:
         email:
             - NotBlank: ~
             - Email: ~
+        plainPassword:
+            - NotBlank: { groups: [New, FullUpdate] }
+            - Type: string
+            - Length:
+                min: 4
+                max: 50
 
 AppBundle\Entity\Category:
     properties:
@@ -26,3 +32,12 @@ AppBundle\Entity\Category:
         parent:
             - NotBlank: ~
             - Type: integer
+
+AppBundle\Entity\Credentials:
+    properties:
+        login:
+            - NotBlank: ~
+            - Type: string
+        password:
+            - NotBlank: ~
+            - Type: string

@@ -55,6 +55,10 @@ class UserController extends Controller
         $form->submit($request->request->all());
 
         if ($form->isValid()) {
+            $encoder = $this->get('security.password_encoder');
+            $encoded = $encoder->encodePassword($user, $user->getPlainPassword());
+            $user->setPassword($encoded);
+
             $em = $this->get('doctrine.orm.entity_manager');
             $em->persist($user);
             $em->flush();
@@ -109,11 +113,24 @@ class UserController extends Controller
             return \FOS\RestBundle\View\View::create(['message' => 'User not found'], Response::HTTP_NOT_FOUND);
         }
 
-        $form = $this->createForm(UserType::class, $user);
+      if ($clearMissing) { // Si une mise à jour complète, le mot de passe doit être validé
+        $options = ['validation_groups'=>['Default', 'FullUpdate']];
+      } else {
+        $options = []; // Le groupe de validation par défaut de Symfony est Default
+      }
+
+        $form = $this->createForm(UserType::class, $user, $options);
 
         $form->submit($request->request->all(), $clearMissing);
 
         if ($form->isValid()) {
+
+          if (!empty($user->getPlainPassword())) {
+            $encoder = $this->get('security.password_encoder');
+            $encoded = $encoder->encodePassword($user, $user->getPlainPassword());
+            $user->setPassword($encoded);
+          }
+
             $em = $this->get('doctrine.orm.entity_manager');
             $em->persist($user);
             $em->flush();
