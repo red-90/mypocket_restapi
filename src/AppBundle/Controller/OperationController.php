@@ -45,6 +45,20 @@ class OperationController extends Controller
         return $operation;
     }
 
+  /**
+   * @Rest\View()
+   * @Rest\Get("/operations-bydate")
+   */
+  public function getOperationsByDateAction(Request $request)
+  {
+    $operations = $this->get('doctrine.orm.entity_manager')
+      ->getRepository('AppBundle:Operation')
+      ->getOperationsByDate();
+
+    return $operations;
+  }
+
+
     /**
      * @Rest\View(statusCode=Response::HTTP_CREATED)
      * @Rest\Post("/operations")
