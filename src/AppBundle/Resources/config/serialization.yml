@@ -1,0 +1,27 @@
+AppBundle\Entity\Operation:
+    attributes:
+        id:
+            groups: ['operation', 'user']
+        name:
+            groups: ['operation', 'user']
+        type:
+            groups: ['operation', 'user']
+        price:
+            groups: ['operation', 'user']
+        description:
+            groups: ['operation', 'user']
+        operation_date:
+            groups: ['operation', 'user']
+        created:
+            groups: ['operation', 'user']      
+        user:
+            groups: ['operation']
+
+AppBundle\Entity\User:
+    attributes:
+        id:
+            groups: ['operation', 'user']
+        fullname:
+            groups: ['operation', 'user']
+        email:
+            groups: ['operation', 'user']

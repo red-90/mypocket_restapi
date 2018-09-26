@@ -14,7 +14,7 @@ use AppBundle\Entity\User;
 class UserController extends Controller
 {
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"operation"})
      * @Rest\Get("/users")
      */
     public function getUsersAction(Request $request)
@@ -27,7 +27,7 @@ class UserController extends Controller
     }
 
      /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"operation"})
      * @Rest\Get("/users/{user_id}")
      */
     public function getUserAction(Request $request)
@@ -44,7 +44,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Rest\View(statusCode=Response::HTTP_CREATED)
+     * @Rest\View(statusCode=Response::HTTP_CREATED, serializerGroups={"operation"})
      * @Rest\Post("/users")
      */
     public function postUsersAction(Request $request)
@@ -69,7 +69,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Rest\View(statusCode=Response::HTTP_NO_CONTENT)
+     * @Rest\View(statusCode=Response::HTTP_NO_CONTENT, serializerGroups={"operation"})
      * @Rest\Delete("/users/{id}")
      */
     public function removeUserAction(Request $request)
@@ -85,7 +85,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"operation"})
      * @Rest\Put("/users/{id}")
      */
     public function updateUserAction(Request $request)
@@ -94,7 +94,7 @@ class UserController extends Controller
     }
 
     /**
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"operation"})
      * @Rest\Patch("/users/{id}")
      */
     public function patchUserAction(Request $request)
