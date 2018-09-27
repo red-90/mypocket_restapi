@@ -20,8 +20,19 @@ AppBundle\Entity\Operation:
 AppBundle\Entity\User:
     attributes:
         id:
-            groups: ['operation', 'user']
+            groups: ['operation', 'user', 'auth-token']
         fullname:
-            groups: ['operation', 'user']
+            groups: ['operation', 'user', 'auth-token']
         email:
-            groups: ['operation', 'user']
+            groups: ['operation', 'user', 'auth-token']
+
+AppBundle\Entity\AuthToken:
+    attributes:
+        id:
+            groups: ['auth-token']
+        value:
+            groups: ['auth-token']
+        createdAt:
+            groups: ['auth-token']
+        user:
+            groups: ['auth-token']
