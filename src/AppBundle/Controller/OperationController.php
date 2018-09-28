@@ -28,6 +28,19 @@ class OperationController extends Controller
         return $operations;
     }
 
+  /**
+   * @Rest\View(serializerGroups={"operation"})
+   * @Rest\Get("/user/{user_id}/operations")
+   */
+  public function getUserOperationsAction(Request $request)
+  {
+    $operations = $this->get('doctrine.orm.entity_manager')
+      ->getRepository('AppBundle:Operation')
+      ->findByUser($request->get('user_id'));
+
+    return $operations;
+  }
+
     /**
      * @Rest\View(serializerGroups={"operation"})
      * @Rest\Get("/operations/{id}")
