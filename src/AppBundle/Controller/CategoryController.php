@@ -17,7 +17,7 @@ class CategoryController extends Controller
 
      /**
      * @Rest\View()
-     * @Rest\Get("/categories")
+     * @Rest\Get("/api/categories")
      */
     public function getCategoriesAction(Request $request)
     {
@@ -30,7 +30,7 @@ class CategoryController extends Controller
 
     /**
      * @Rest\View()
-     * @Rest\Get("/categories/{id}")
+     * @Rest\Get("/api/categories/{id}")
      */
     public function getCategoryAction(Request $request)
     {
@@ -47,7 +47,7 @@ class CategoryController extends Controller
 
     /**
      * @Rest\View(statusCode=Response::HTTP_CREATED)
-     * @Rest\Post("/categories")
+     * @Rest\Post("/api/categories")
      */
     public function postCategoriesAction(Request $request)
     {
@@ -68,7 +68,7 @@ class CategoryController extends Controller
 
     /**
      * @Rest\View(statusCode=Response::HTTP_NO_CONTENT)
-     * @Rest\Delete("/categories/{id}")
+     * @Rest\Delete("/api/categories/{id}")
      */
     public function removeCategoryAction(Request $request)
     {
@@ -84,7 +84,7 @@ class CategoryController extends Controller
 
        /**
      * @Rest\View()
-     * @Rest\Put("/categories/{id}")
+     * @Rest\Put("/api/categories/{id}")
      */
     public function updateCategoryAction(Request $request)
     {
@@ -93,7 +93,7 @@ class CategoryController extends Controller
 
     /**
      * @Rest\View()
-     * @Rest\Patch("/categories/{id}")
+     * @Rest\Patch("/api/categories/{id}")
      */
     public function patchCategoryAction(Request $request)
     {

@@ -17,7 +17,7 @@ class OperationController extends Controller
 
      /**
      * @Rest\View(serializerGroups={"operation"})
-     * @Rest\Get("/operations")
+     * @Rest\Get("/api/operations")
      */
     public function getOperationsAction(Request $request)
     {
@@ -30,7 +30,7 @@ class OperationController extends Controller
 
   /**
    * @Rest\View(serializerGroups={"operation"})
-   * @Rest\Get("/user/{user_id}/operations")
+   * @Rest\Get("/api/user/{user_id}/operations")
    */
   public function getUserOperationsAction(Request $request)
   {
@@ -43,7 +43,7 @@ class OperationController extends Controller
 
     /**
      * @Rest\View(serializerGroups={"operation"})
-     * @Rest\Get("/operations/{id}")
+     * @Rest\Get("/api/operations/{id}")
      */
     public function getOperationAction(Request $request)
     {
@@ -60,7 +60,7 @@ class OperationController extends Controller
 
   /**
    * @Rest\View(serializerGroups={"operation"})
-   * @Rest\Get("/operations-bydate")
+   * @Rest\Get("/api/operations-bydate")
    */
   public function getOperationsByDateAction(Request $request)
   {
@@ -74,7 +74,7 @@ class OperationController extends Controller
 
     /**
      * @Rest\View(statusCode=Response::HTTP_CREATED, serializerGroups={"operation"})
-     * @Rest\Post("/operations")
+     * @Rest\Post("/api/operations")
      */
     public function postOperationsAction(Request $request)
     {
@@ -95,7 +95,7 @@ class OperationController extends Controller
 
     /**
      * @Rest\View(statusCode=Response::HTTP_NO_CONTENT, serializerGroups={"operation"})
-     * @Rest\Delete("/operations/{id}")
+     * @Rest\Delete("/api/operations/{id}")
      */
     public function removeOperationAction(Request $request)
     {
@@ -112,7 +112,7 @@ class OperationController extends Controller
 
        /**
      * @Rest\View(serializerGroups={"operation"})
-     * @Rest\Put("/operations/{id}")
+     * @Rest\Put("/api/operations/{id}")
      */
     public function updateOperationAction(Request $request)
     {
@@ -121,7 +121,7 @@ class OperationController extends Controller
 
     /**
      * @Rest\View(serializerGroups={"operation"})
-     * @Rest\Patch("/operations/{id}")
+     * @Rest\Patch("/api/operations/{id}")
      */
     public function patchOperationAction(Request $request)
     {

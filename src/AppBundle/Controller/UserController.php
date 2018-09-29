@@ -15,7 +15,7 @@ class UserController extends Controller
 {
     /**
      * @Rest\View(serializerGroups={"operation"})
-     * @Rest\Get("/users")
+     * @Rest\Get("/api/users")
      */
     public function getUsersAction(Request $request)
     {
@@ -28,7 +28,7 @@ class UserController extends Controller
 
      /**
      * @Rest\View(serializerGroups={"operation"})
-     * @Rest\Get("/users/{user_id}")
+     * @Rest\Get("/api/users/{user_id}")
      */
     public function getUserAction(Request $request)
     {
@@ -45,7 +45,7 @@ class UserController extends Controller
 
     /**
      * @Rest\View(statusCode=Response::HTTP_CREATED, serializerGroups={"operation"})
-     * @Rest\Post("/users")
+     * @Rest\Post("/api/users")
      */
     public function postUsersAction(Request $request)
     {
@@ -70,7 +70,7 @@ class UserController extends Controller
 
     /**
      * @Rest\View(statusCode=Response::HTTP_NO_CONTENT, serializerGroups={"operation"})
-     * @Rest\Delete("/users/{id}")
+     * @Rest\Delete("/api/users/{id}")
      */
     public function removeUserAction(Request $request)
     {
@@ -86,7 +86,7 @@ class UserController extends Controller
 
     /**
      * @Rest\View(serializerGroups={"operation"})
-     * @Rest\Put("/users/{id}")
+     * @Rest\Put("/api/users/{id}")
      */
     public function updateUserAction(Request $request)
     {
@@ -95,7 +95,7 @@ class UserController extends Controller
 
     /**
      * @Rest\View(serializerGroups={"operation"})
-     * @Rest\Patch("/users/{id}")
+     * @Rest\Patch("/api/users/{id}")
      */
     public function patchUserAction(Request $request)
     {

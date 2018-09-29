@@ -14,7 +14,7 @@ class AuthTokenController extends Controller
 {
   /**
    * @Rest\View(statusCode=Response::HTTP_CREATED, serializerGroups={"auth-token"})
-   * @Rest\Post("/auth-tokens")
+   * @Rest\Post("/api/auth-tokens")
    */
   public function postAuthTokensAction(Request $request)
   {
@@ -56,7 +56,7 @@ class AuthTokenController extends Controller
 
   /**
     * @Rest\View(statusCode=Response::HTTP_NO_CONTENT, serializerGroups={"auth-token"})
-    * @Rest\Delete("/auth-tokens/{id}")
+    * @Rest\Delete("/api/auth-tokens/{id}")
     */
   public function removeAuthTokenAction(Request $request)
   {
