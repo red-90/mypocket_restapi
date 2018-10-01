@@ -1,8 +1,5 @@
 AppBundle\Entity\Operation:
     properties:
-        name:
-            - NotBlank: ~
-            - Type: string
         type:
             - NotBlank: ~
             - Type: string

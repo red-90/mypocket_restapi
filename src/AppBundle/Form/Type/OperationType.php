@@ -18,11 +18,11 @@ class OperationType extends AbstractType
         $builder->add('user');
         $builder->add('operation_date', DateTimeType::class, [
                       'widget' => 'single_text',
-                      'format' => 'yyyy-MM-dd HH:mm:ss',
+                      'format' => 'yyyy-MM-dd',
                     ]);
         $builder->add('created', DateTimeType::class, [
           'widget' => 'single_text',
-          'format' => 'yyyy-MM-dd HH:mm:ss',
+          'format' => 'yyyy-MM-dd',
         ]);
         
     }
